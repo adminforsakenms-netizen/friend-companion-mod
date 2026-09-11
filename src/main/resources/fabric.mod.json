@@ -9,7 +9,8 @@
   "license": "MIT",
   "environment": "*",
   "entrypoints": {
-    "main": ["com.example.friendmod.FriendMod"]
+    "main": ["com.example.friendmod.FriendMod"],
+    "client": ["com.example.friendmod.FriendModClient"]
   },
   "mixins": [],
   "depends": {
