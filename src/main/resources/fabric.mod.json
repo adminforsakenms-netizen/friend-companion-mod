@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "friendmod",
+  "version": "${version}",
+  "name": "Friend Companion",
+  "description": "Companion AI yang boleh ikut, bertarung, ada emosi, dan borak bebas.",
+  "authors": ["Kamu"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.example.friendmod.FriendMod"]
+  },
+  "mixins": [],
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
