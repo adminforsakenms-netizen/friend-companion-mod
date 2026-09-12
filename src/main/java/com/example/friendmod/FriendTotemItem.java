@@ -3,8 +3,8 @@ package com.example.friendmod;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
@@ -14,12 +14,12 @@ public class FriendTotemItem extends Item {
 	}
 
 	@Override
-	public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
+	public ActionResult use(World world, PlayerEntity player, Hand hand) {
 		ItemStack stack = player.getStackInHand(hand);
 
-		if (!world.isClient) {
+		if (!world.isClient()) {
 			FriendEntity friend = new FriendEntity(ModEntities.FRIEND, world);
-			Vec3d spawnPos = player.getPos().add(player.getRotationVector().multiply(2));
+			Vec3d spawnPos = player.position().add(player.getRotationVector().multiply(2));
 			friend.refreshPositionAndAngles(spawnPos.x, spawnPos.y, spawnPos.z, player.getYaw(), 0);
 			friend.setOwner(player);
 			friend.setTamed(true, true);
@@ -30,6 +30,6 @@ public class FriendTotemItem extends Item {
 			}
 		}
 
-		return TypedActionResult.success(stack, world.isClient());
+		return ActionResult.SUCCESS;
 	}
 }
