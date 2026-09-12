@@ -9,9 +9,11 @@ import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
 
 public class FriendEntity extends TameableEntity {
@@ -45,5 +47,10 @@ public class FriendEntity extends TameableEntity {
 	@Override
 	public boolean isBreedingItem(ItemStack stack) {
 		return false;
+	}
+
+	@Override
+	public PassiveEntity createChild(ServerWorld world, PassiveEntity entity) {
+		return null;
 	}
 }
