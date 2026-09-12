@@ -33,7 +33,7 @@ public class FriendCommands {
 
 		PlayerEntity player = source.getPlayer();
 		Box searchArea = player.getBoundingBox().expand(100.0);
-		List<FriendEntity> nearbyFriends = player.getWorld().getEntitiesByClass(
+		List<FriendEntity> nearbyFriends = player.getEntityWorld().getEntitiesByClass(
 				FriendEntity.class, searchArea, friend -> friend.isOwner(player));
 
 		if (nearbyFriends.isEmpty()) {
