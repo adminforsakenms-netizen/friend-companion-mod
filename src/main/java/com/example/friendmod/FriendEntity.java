@@ -11,6 +11,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 public class FriendEntity extends TameableEntity {
@@ -30,7 +31,7 @@ public class FriendEntity extends TameableEntity {
 	@Override
 	protected void initGoals() {
 		this.goalSelector.add(1, new SwimGoal(this));
-		this.goalSelector.add(2, new FollowOwnerGoal(this, 1.0, 10.0f, 2.0f, false));
+		this.goalSelector.add(2, new FollowOwnerGoal(this, 1.0, 10.0f, 2.0f));
 		this.goalSelector.add(3, new WanderAroundFarGoal(this, 1.0));
 		this.goalSelector.add(4, new LookAtEntityGoal(this, PlayerEntity.class, 8.0f));
 		this.goalSelector.add(5, new LookAroundGoal(this));
@@ -38,6 +39,11 @@ public class FriendEntity extends TameableEntity {
 
 	@Override
 	public boolean canBreedWith(AnimalEntity other) {
+		return false;
+	}
+
+	@Override
+	public boolean isBreedingItem(ItemStack stack) {
 		return false;
 	}
 }
