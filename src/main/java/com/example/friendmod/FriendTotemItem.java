@@ -19,8 +19,13 @@ public class FriendTotemItem extends Item {
 
 		if (!world.isClient()) {
 			FriendEntity friend = new FriendEntity(ModEntities.FRIEND, world);
-			Vec3d spawnPos = player.position().add(player.getRotationVector().multiply(2));
-			friend.refreshPositionAndAngles(spawnPos.x, spawnPos.y, spawnPos.z, player.getYaw(), 0);
+
+			Vec3d look = player.getRotationVector().multiply(2);
+			double x = player.getX() + look.x;
+			double y = player.getY() + look.y;
+			double z = player.getZ() + look.z;
+
+			friend.refreshPositionAndAngles(x, y, z, player.getYaw(), 0);
 			friend.setOwner(player);
 			friend.setTamed(true, true);
 			world.spawnEntity(friend);
