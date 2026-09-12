@@ -1,5 +1,4 @@
 package com.example.friendmod;
-package com.example.friendmod;
 
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
