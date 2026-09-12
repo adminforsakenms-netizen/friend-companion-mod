@@ -1,4 +1,5 @@
 package com.example.friendmod;
+package com.example.friendmod;
 
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
@@ -29,6 +30,6 @@ public class FriendEntityRenderer extends MobEntityRenderer<FriendEntity, Zombie
 	@Override
 	public void updateRenderState(FriendEntity friendEntity, ZombieEntityRenderState state, float tickDelta) {
 		super.updateRenderState(friendEntity, state, tickDelta);
-		BipedEntityRenderer.updateBipedRenderState(friendEntity, state, tickDelta);
+		BipedEntityRenderer.updateBipedRenderState(friendEntity, state, tickDelta, this.itemModelResolver);
 	}
 }
