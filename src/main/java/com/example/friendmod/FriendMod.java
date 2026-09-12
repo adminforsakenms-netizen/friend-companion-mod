@@ -11,6 +11,7 @@ public class FriendMod implements ModInitializer {
 	public void onInitialize() {
 		ModEntities.register();
 		ModItems.register();
+		FriendCommands.register();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.FRIEND, FriendEntity.createFriendAttributes());
 	}
